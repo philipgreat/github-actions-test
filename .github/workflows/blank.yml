@@ -26,5 +26,8 @@ jobs:
     - name: Run a multi-line script
       run: |
         wget http://d.xrcity.cn/upload/java/resin-3.1.16.zip
-       
+        unzip resin-3.1.16.zip
+        cd resin-3.1.16 && bin/httpd.sh > run.log &
+        sleep 20
+        killall -9 java
         
